@@ -1,24 +1,26 @@
 import React from "react";
 import Display from "./Display";
 import ButtonPanel from "./ButtonPanel";
-import calculate from "../logic/calculate";
 import "./App.css";
+import handleInput from "../logic/handleInput";
 
 export default class App extends React.Component {
   state = {
-    total: null,
-    next: null,
+    x: null,
+    y: null,
     operation: null,
+    buttonName: null,
+    buttonType: null,
   };
 
-  handleClick = buttonName => {
-    this.setState(calculate(this.state, buttonName));
-  };
+  handleClick = (buttonName, buttonType) => {
+    this.setState(handleInput(this.state, buttonName, buttonType));
+  }
 
   render() {
     return (
       <div className="component-app">
-        <Display value={this.state.next || this.state.total || "0"} />
+        <Display value={this.state.x || this.state.y || "0"} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
