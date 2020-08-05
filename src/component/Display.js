@@ -1,17 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { CalculatorContext } from "../context/CalculatorContext";
 
 import "./Display.css";
 
 export default class Display extends React.Component {
-  static propTypes = {
-    value: PropTypes.string,
-  };
+  static contextType = CalculatorContext;
 
   render() {
+    const { x, y } = this.context;
+
     return (
       <div className="component-display">
-        <div>{this.props.value}</div>
+        <div>{ y || x || "0" }</div>
       </div>
     );
   }

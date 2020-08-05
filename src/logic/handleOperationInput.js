@@ -1,24 +1,21 @@
-import calculate from "./calculate";
 
-export default function handleOperationInput (currentState, buttonName){
-
-    if (!currentState.x) {
-        return currentState;
-    } else if (currentState.operation && currentState.y) {
+export default function handleOperationInput (context, input){
+    if (!context.x) {
+        return null;
+    } else if (context.operation && context.y) {
         var result = {
-            x: calculate(currentState.x, currentState.y, currentState.operation),
+            x: context.operation(context.x, context.y),
             y: null,
-            operation: buttonName,
-            buttonName: null,
-            buttonType: null,
+            operation: input,
+            input: null,
         };
-        var newState = Object.assign(currentState, result);
-        return newState;
+        var newContext = Object.assign(context, result);
+        return newContext;
     } else {
-        var result = { 
-            operation: buttonName,
+        var operationUpdate = { 
+            operation: input,
         };
-        var newState = Object.assign(currentState, result);
-        return newState;
+        var newContext = Object.assign(context, operationUpdate);
+        return newContext;
     }
 }

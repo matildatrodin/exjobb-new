@@ -1,14 +1,15 @@
-import update from "./update";
+import update from "./operations/update";
 
-export default function handleNumberInput (currentState, buttonName){
+export default function handleNumberInput (context, number){
+    console.log(context);
 
-    if(!currentState.operation) {
-        var xUpdate = { x: update(currentState.x, buttonName)};
-        var newState = Object.assign(currentState, xUpdate);
-        return newState;
-        } else {
-        var yUpdate = { y: update(currentState.y, buttonName)};
-        var newState = Object.assign(currentState, yUpdate);
-        return newState;
+    if(!context.operation) {
+        var xUpdate = { x: update(context.x, number)};
+        var newContext = Object.assign(context, xUpdate);
+        return newContext;
+    } else {
+        var yUpdate = { y: update(context.y, number)};
+        var newContext = Object.assign(context, yUpdate);
+        return newContext;
     }
 }

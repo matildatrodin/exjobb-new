@@ -1,50 +1,51 @@
-import Button from "./Button";
 import React from "react";
-import PropTypes from "prop-types";
-
 import "./ButtonPanel.css";
+import add from "../logic/operations/add";
+import clear from "../logic/operations/clear";
+import conv from "../logic/operations/conv";
+import deci from "../logic/operations/deci";
+import div from "../logic/operations/div";
+import equ from "../logic/operations/equ";
+import multi from "../logic/operations/multi";
+import perc from "../logic/operations/perc";
+import sub from "../logic/operations/sub";
+import NumberButton from './NumberButton';
+import ConversionButton from './ConversionButton';
+import OperationButton from './OperationButton';
 
 export default class ButtonPanel extends React.Component {
-  static propTypes = {
-    clickHandler: PropTypes.func,
-  };
-
-  handleClick = (buttonName, buttonType) => {
-    console.log(buttonName);
-    this.props.clickHandler(buttonName, buttonType);
-  };
 
   render() {
     return (
       <div className="component-button-panel">
         <div>
-          <Button name="AC" type="conversion" clickHandler={this.handleClick} />
-          <Button name="+/-" type="conversion" clickHandler={this.handleClick} />
-          <Button name="%" type="conversion" clickHandler={this.handleClick} />
-          <Button name="÷" type="operation" clickHandler={this.handleClick} orange />
+          <ConversionButton name="AC" func={clear} />
+          <ConversionButton name="+/-" func={conv} />
+          <ConversionButton name="%" func={perc} />
+          <OperationButton name="÷" func={div} orange />
         </div>
         <div>
-          <Button name="7" type="number" clickHandler={this.handleClick} />
-          <Button name="8" type="number" clickHandler={this.handleClick} />
-          <Button name="9" type="number" clickHandler={this.handleClick} />
-          <Button name="x" type="operation" clickHandler={this.handleClick} orange />
+          <NumberButton name="7"/>
+          <NumberButton name="8" />
+          <NumberButton name="9" />
+          <OperationButton name="x" func={multi} orange />
         </div>
         <div>
-          <Button name="4" type="number" clickHandler={this.handleClick} />
-          <Button name="5" type="number" clickHandler={this.handleClick} />
-          <Button name="6" type="number" clickHandler={this.handleClick} />
-          <Button name="-" type="operation" clickHandler={this.handleClick} orange />
+          <NumberButton name="4" />
+          <NumberButton name="5" />
+          <NumberButton name="6" />
+          <OperationButton name="-" func={sub} orange />
         </div>
         <div>
-          <Button name="1" type="number" clickHandler={this.handleClick} />
-          <Button name="2" type="number" clickHandler={this.handleClick} />
-          <Button name="3" type="number" clickHandler={this.handleClick} />
-          <Button name="+" type="operation" clickHandler={this.handleClick} orange />
+          <NumberButton name="1" />
+          <NumberButton name="2" />
+          <NumberButton name="3" />
+          <OperationButton name="+" func={add} orange />
         </div>
         <div>
-          <Button name="0" type="number" clickHandler={this.handleClick} wide />
-          <Button name="." type="conversion" clickHandler={this.handleClick} />
-          <Button name="=" type="conversion" clickHandler={this.handleClick} orange />
+          <NumberButton name="0" wide />
+          <ConversionButton name="." func={deci} />
+          <ConversionButton name="=" func={equ} orange />
         </div>
       </div>
     );
