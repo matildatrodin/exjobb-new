@@ -4,13 +4,9 @@ export default function handleConversionInput (context, input){
     if (!context.x) {
         return null;
     } else if(context.operation && context.y) {
-        var result = { 
-            x: context.operation(context.x, context.y),
-            y: null,
-            operation: input,
-        };
+        var result = context.operation(context.x, context.y);
         var conversion = { 
-            x: context.operation(context.x, context.y),
+            x: input(result),
             y: null,
             operation: null,
         };
