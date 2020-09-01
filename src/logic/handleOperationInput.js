@@ -1,5 +1,7 @@
 
 export default function handleOperationInput (context, input){
+    var newContext;
+
     if (!context.x) {
         return null;
     } else if (context.operation && context.y) {
@@ -9,13 +11,13 @@ export default function handleOperationInput (context, input){
             operation: input,
             input: null,
         };
-        var newContext = Object.assign(context, result);
+        newContext = Object.assign(context, result);
         return newContext;
     } else {
         var operationUpdate = { 
             operation: input,
         };
-        var newContext = Object.assign(context, operationUpdate);
+        newContext = Object.assign(context, operationUpdate);
         return newContext;
     }
 }

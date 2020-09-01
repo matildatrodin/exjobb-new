@@ -11,22 +11,22 @@ export default class NumberButton extends Button {
     constructor(props){
         super(props);
         this.className = [this.className, 
-            (this.props.wide ? "wide" : "")
+            (props.wide ? "wide" : "")
         ].join(" ").trim();
-        this.number = this.props.name;
+        this.number = props.name;
     }
 
-    handleClick = () => {
+    
+    handleButtonInput = () => {
         var newContext = handleNumberInput(this.context, this.number);
         this.context.updateContext(newContext);
       }
 
       render(){
           return( 
-            <>
-                {super.render(<button onClick={this.handleClick}>{this.props.name}</button>)}
-            </>
+            <div className={this.className}>
+                <button onClick={this.handleButtonInput}>{this.number}</button>
+            </div>
           )
       }
-
 }

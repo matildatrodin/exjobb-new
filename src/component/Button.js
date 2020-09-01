@@ -1,20 +1,24 @@
 import React from "react";
 import "./Button.css";
 
-export default class Button extends React.Component {
+class Button extends React.Component {
 
     constructor(props){
         super(props);
         this.className = 'component-button';
     }
 
-  render(args) {
+  handleButtonInput = () => {
+    throw new TypeError(this.constructor.name + ' must implement the handleButtonInput method!')
+  }
 
+  render() {
+    throw new TypeError(this.constructor.name + ' must implement the render method!')
     return (
-      <div className={this.className}>
-        {this.props.children}
-        {args}
-      </div>
+      <>
+      </>
     );
   }
 }
+
+export default Button;

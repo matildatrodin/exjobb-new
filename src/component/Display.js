@@ -3,7 +3,7 @@ import { CalculatorContext } from "../context/CalculatorContext";
 
 import "./Display.css";
 
-export default class Display extends React.Component {
+class Display extends React.Component {
   static contextType = CalculatorContext;
 
   render() {
@@ -16,3 +16,5 @@ export default class Display extends React.Component {
     );
   }
 }
+
+export default Display;

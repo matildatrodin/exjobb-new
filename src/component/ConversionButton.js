@@ -11,22 +11,23 @@ export default class ConversionButton extends Button {
     constructor(props){
         super(props);
         this.className = [this.className, 
-            (this.props.wide ? "wide" : ""), 
-            (this.props.orange ? "orange" : "")
+            (props.wide ? "wide" : ""), 
+            (props.orange ? "orange" : "")
         ].join(" ").trim();
-        this.func = this.props.func;
+        this.func = props.func;
+        this.name = props.name
     }
 
-    handleClick = () => {
+    handleButtonInput = () => {
         var newContext = handleConversionInput(this.context, this.func);
         this.context.updateContext(newContext);
       }
 
       render(){
           return( 
-            <>
-                {super.render(<button onClick={this.handleClick}>{this.props.name}</button>)}
-            </>
+            <div className={this.className}>
+                <button onClick={this.handleButtonInput}>{this.name}</button>
+            </div>
           )
       }
 
