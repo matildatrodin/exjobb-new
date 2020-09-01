@@ -1,17 +1,17 @@
 import React from "react";
 import "./ButtonPanel.css";
-import add from "../logic/operations/add";
-import clearDisplay from "../logic/operations/clearDisplay";
-import convertNumber from "../logic/operations/convertNumber";
-import deci from "../logic/operations/addDecimal";
-import divide from "../logic/operations/divide";
-import equals from "../logic/operations/equals";
-import multiply from "../logic/operations/multiply";
-import percent from "../logic/operations/percent";
-import subtract from "../logic/operations/subtract";
-import NumberButton from './NumberButton';
-import ConversionButton from './ConversionButton';
-import OperationButton from './OperationButton';
+import add from "../logic/operations/Add";
+import clearDisplay from "../logic/operations/ClearDisplay";
+import convertNumber from "../logic/operations/ConvertNumber";
+import addDecimal from "../logic/operations/AddDecimal";
+import divide from "../logic/operations/Divide";
+import equals from "../logic/operations/Equals";
+import multiply from "../logic/operations/Multiply";
+import percent from "../logic/operations/Percent";
+import subtract from "../logic/operations/Subtract";
+import NumberButton from './buttons/NumberButton';
+import ConversionButton from './buttons/ConversionButton';
+import OperationButton from './buttons/OperationButton';
 
 class ButtonPanel extends React.Component {
 
@@ -44,7 +44,7 @@ class ButtonPanel extends React.Component {
         </div>
         <div>
           <NumberButton name="0" wide />
-          <ConversionButton name="." func={deci} />
+          <ConversionButton name="." func={addDecimal} />
           <ConversionButton name="=" func={equals} orange />
         </div>
       </div>

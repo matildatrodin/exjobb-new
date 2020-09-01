@@ -1,10 +1,10 @@
 import React from 'react';
 import "./Button.css";
-import Button from "./Button";
-import handleConversionInput from "../logic/handleConversionInput";
-import { CalculatorContext } from "../context/CalculatorContext";
+import ButtonInterface from "./ButtonInterface";
+import handleConversionInput from "../../logic/handleConversionInput";
+import { CalculatorContext } from "../../context/CalculatorContext";
 
-class ConversionButton extends Button {
+class ConversionButton extends ButtonInterface {
     
     static contextType = CalculatorContext;
 

@@ -1,6 +1,12 @@
+import OperationInterface from "./OperationInterface";
 
-function clearDisplay() {
-    return null;
+class ClearDisplay extends OperationInterface {
+    
+    operation = () => {
+        return null;
+    }
 }
+
+let clearDisplay = new ClearDisplay().operation;
 
 export default clearDisplay;

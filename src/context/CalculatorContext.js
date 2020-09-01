@@ -24,6 +24,7 @@ class CalculatorContextProvider extends Component {
     }
 
     render() {
+        console.log(this.state);
         return (
             <CalculatorContext.Provider value={{
                 ...this.state, 
