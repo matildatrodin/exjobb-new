@@ -4,7 +4,7 @@ import ButtonPanel from "./ButtonPanel";
 import "./App.css";
 import CalculatorContextProvider from '../context/CalculatorContext';
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   render() {
     return (
@@ -17,3 +17,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;

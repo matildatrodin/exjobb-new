@@ -1,5 +1,5 @@
 
-export default function handleConversionInput (context, input){
+function handleConversionInput (context, input){
     var conversion;
     var newContext;
 
@@ -24,3 +24,5 @@ export default function handleConversionInput (context, input){
         return newContext;
         } 
 }
+
+export default handleConversionInput;

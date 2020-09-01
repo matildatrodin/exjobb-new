@@ -1,7 +1,10 @@
-export default function update(z, button) {
+
+function updateValue(z, button) {
     if (z === null) {
         return button;
     } else {
     return z + button;
     }
 }
+
+export default updateValue;

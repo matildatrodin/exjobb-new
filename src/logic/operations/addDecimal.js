@@ -1,7 +1,10 @@
-export default function deci(z) {
+
+function addDecimal(z) {
     if (z.includes(".")) {
         return z;
     } else {
         return z + ".";
     }
 }
+
+export default addDecimal;

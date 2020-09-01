@@ -1,5 +1,5 @@
 
-export default function handleOperationInput (context, input){
+function handleOperationInput (context, input){
     var newContext;
 
     if (!context.x) {
@@ -21,3 +21,5 @@ export default function handleOperationInput (context, input){
         return newContext;
     }
 }
+
+export default handleOperationInput;

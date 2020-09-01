@@ -1,4 +1,5 @@
-export default function div(x,y) {
+
+function divide(x,y) {
     if (y === "0") {
         return("err")
     } else {
@@ -6,3 +7,5 @@ export default function div(x,y) {
         return result.toString();
     }
 }
+
+export default divide;

@@ -4,7 +4,7 @@ import Button from "./Button";
 import handleNumberInput from "../logic/handleNumberInput";
 import { CalculatorContext } from "../context/CalculatorContext";
 
-export default class NumberButton extends Button {
+class NumberButton extends Button {
     
     static contextType = CalculatorContext;
 
@@ -30,3 +30,5 @@ export default class NumberButton extends Button {
           )
       }
 }
+
+export default NumberButton;

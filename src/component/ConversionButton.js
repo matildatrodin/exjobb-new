@@ -4,7 +4,7 @@ import Button from "./Button";
 import handleConversionInput from "../logic/handleConversionInput";
 import { CalculatorContext } from "../context/CalculatorContext";
 
-export default class ConversionButton extends Button {
+class ConversionButton extends Button {
     
     static contextType = CalculatorContext;
 
@@ -30,5 +30,6 @@ export default class ConversionButton extends Button {
             </div>
           )
       }
-
 }
+
+export default ConversionButton;
