@@ -14,6 +14,7 @@ class ButtonInterface extends React.Component {
 
   render() {
     throw new TypeError(this.constructor.name + ' must implement the render method!')
+    // eslint-disable-next-line
     return (
       <>
       </>

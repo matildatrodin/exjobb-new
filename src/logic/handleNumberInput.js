@@ -1,4 +1,4 @@
-import updateValue from "./operations/UpdateValue";
+import updateValue from "./operations/updateValue";
 
 function handleNumberInput (context, number){
     var newContext;
