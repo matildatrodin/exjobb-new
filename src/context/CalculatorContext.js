@@ -10,9 +10,7 @@ class CalculatorContextProvider extends Component {
     } 
 
     updateContext = (newContext) => {
-        console.log("updating context");
         if(newContext === null) {
-            console.log("no new context");
             return null;
         } else {
             this.setState({
@@ -24,7 +22,6 @@ class CalculatorContextProvider extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <CalculatorContext.Provider value={{
                 ...this.state, 
