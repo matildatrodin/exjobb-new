@@ -7,7 +7,7 @@ import addDecimal from "../logic/operations/AddDecimal";
 import divide from "../logic/operations/Divide";
 import equals from "../logic/operations/Equals";
 import multiply from "../logic/operations/Multiply";
-import percent from "../logic/operations/Percent";
+import squared from "../logic/operations/Squared";
 import subtract from "../logic/operations/Subtract";
 import NumberButton from './buttons/NumberButton';
 import ConversionButton from './buttons/ConversionButton';
@@ -21,7 +21,7 @@ class ButtonPanel extends React.Component {
         <div>
           <ConversionButton name="AC" func={clearDisplay} />
           <ConversionButton name="+/-" func={convertNumber} />
-          <ConversionButton name="%" func={percent} />
+          <ConversionButton name="x&sup2;" func={squared} />
           <OperationButton name="÷" func={divide} orange />
         </div>
         <div>
